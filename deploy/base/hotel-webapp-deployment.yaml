@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-webapp-deployment
+  namespace: landon-hotel
+  labels:
+    app: hotel-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-webapp
+  template:
+    metadata:
+      labels:
+        app: hotel-webapp
+    spec:
+      containers:
+      - name: hotel-webapp
+        image: ghcr.io/{githubOrganizationName}/hotel-webapp:1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          failureThreshold: 2
+      imagePullSecrets:
+        - name: regcred

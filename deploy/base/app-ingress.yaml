@@ -1,0 +1,39 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: hotel-app-ingress
+  namespace: landon-hotel
+
+spec:
+  rules:
+    - host: landon.linkedin.io
+      http:
+        paths:
+          - path: /
+            pathType:  Prefix
+            backend:
+              service:
+                name:  hotel-webapp-service
+                port:
+                  number: 80
+          - path: /api/room-service
+            pathType:  Prefix
+            backend:
+              service:
+                name:  room-service
+                port:
+                  number: 80
+          - path: /api/guest-service
+            pathType:  Prefix
+            backend:
+              service:
+                name:  guest-service
+                port:
+                  number: 80
+          - path: /api/booking-service
+            pathType:  Prefix
+            backend:
+              service:
+                name:  booking-service
+                port:
+                  number: 80

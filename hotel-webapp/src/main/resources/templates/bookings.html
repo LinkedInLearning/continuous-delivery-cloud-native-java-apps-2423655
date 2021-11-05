@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta content="width=device-width, initial-scale=1">
+
+
+<!-- Bootstrap CSS -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<title>LinkedIn Learning: Continuous Delivery for Cloud Native Java!</title>
+<script>
+	window.onload=function(){
+
+		fetch('/booking')
+			.then(response => response.json())
+			.then(results => {
+				
+				for(let item of results){
+					let name = item?.guest?.firstName == undefined ? '':item?.guest?.firstName + ' ' + item?.guest?.lastName; 
+					$("#records").find('tbody')
+    					.append($('<tr>')
+        				.append($('<td>').text(item.bookingId))
+        				.append($('<td>').text(name))
+        				.append($('<td>').text(item?.room?.name))
+        				.append($('<td>').text(item.startDate))
+        				.append($('<td>').text(item.endDate))
+        			);
+        		}
+			});
+		
+	}
+	
+</script>
+
+</head>
+<body>
+<body>
+	<div class="px-4 py-5 my-3 text-center">
+		<img class="d-block mx-auto mb-4" src="images/logo.png" alt="" width="766" height="121">
+		<header class="d-flex justify-content-center py-3">
+      		<ul class="nav nav-pills">
+        		<li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Bookings</a></li>
+      		</ul>
+    	</header>
+		<div class="m-4 w-50 mx-auto">
+			<h3>Bookings</h3>
+			<table id="records" class="table">
+  				<thead>
+    				<tr>
+      					<th scope="col">Booking#</th>
+      					<th scope="col">Guest</th>
+      					<th scope="col">Room</th>
+      					<th scope="col">Arrive</th>
+      					<th scope="col">Depart</th>
+    				</tr>
+  				</thead>
+  				<tbody></tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

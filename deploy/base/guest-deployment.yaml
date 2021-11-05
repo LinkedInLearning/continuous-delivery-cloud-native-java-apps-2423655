@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guest-service-deployment
+  namespace: landon-hotel
+  labels:
+    app: guest-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guest-service
+  template:
+    metadata:
+      labels:
+        app: guest-service
+    spec:
+      containers:
+      - name: guest-service
+        image: ghcr.io/{githubOrganizationName}/guest-service:1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /api/guest-service/actuator/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          failureThreshold: 2
+      imagePullSecrets:
+        - name: regcred                    

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: room-service-deployment
+  namespace: landon-hotel
+  labels:
+    app: room-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: room-service
+  template:
+    metadata:
+      labels:
+        app: room-service
+    spec:
+      containers:
+      - name: room-service
+        image: ghcr.io/{githubOrganizationName}/room-service:1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /api/room-service/actuator/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          failureThreshold: 2
+      imagePullSecrets:
+        - name: regcred        

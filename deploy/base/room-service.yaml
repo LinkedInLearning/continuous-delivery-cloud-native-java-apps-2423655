@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: room-service
+  namespace: landon-hotel
+spec:
+  type: ClusterIP
+  selector:
+    app: room-service
+  ports:
+    - port: 80
+      targetPort: 8080

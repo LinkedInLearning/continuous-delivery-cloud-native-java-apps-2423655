@@ -4,9 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### Eclipse ###
-.metadata
-.sonarlint
+### STS ###
 .apt_generated
 .classpath
 .factorypath

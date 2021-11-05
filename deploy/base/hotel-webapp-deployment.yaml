@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hotel-webapp
-        image: ghcr.io/{githubOrganizationName}/hotel-webapp:1
+        image: ghcr.io/hotel-landon-kb/hotel-webapp:1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

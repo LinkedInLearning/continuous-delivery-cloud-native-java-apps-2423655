@@ -16,6 +16,19 @@ project.plugins.each{
 	println it
 }
 
+project.tasks.register("simpleTask"){
+
+	doFirst{
+		println 'Hello LinkedIn Learning'
+	}
+	
+	doLast{
+		println 'Hello Learner'
+	}
+}
+
+build.dependsOn simpleTask
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()

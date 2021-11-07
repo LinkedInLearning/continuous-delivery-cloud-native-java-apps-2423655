@@ -5,6 +5,15 @@
 	<groupId>com.linkedin.javacd</groupId>
 	<artifactId>playground</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+	</dependencies>
+
 
 	<properties>
 		<maven.compiler.release>11</maven.compiler.release>

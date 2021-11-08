@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.linkedin.javacd</groupId>
-	<artifactId>guest-service</artifactId>
+	<artifactId>room-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>guest-service</name>
-	<description>Demo project for Spring Boot</description>
+	<name>room-service</name>
+	<description>Demo project for the course</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -43,7 +43,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>${jarName}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+    
+  config.vm.box = "kevinbowersox-teach/javacd-lab"
+  config.vm.box_version = "1.0"
+  
+  config.vbguest.auto_update = false 
+  config.vbguest.no_remote = true
+
+   config.vm.provider "virtualbox" do |vb|
+   	   
+     vb.name = "lab"
+	 
+     vb.gui = true
+  
+     # Customize the amount of memory on the VM here:
+     vb.memory = "16000"
+	 
+     # Customize the number of CPU for the VM here:
+     vb.cpus = 6
+	 
+     # Customize the amount of Video Memory here:
+     vb.customize ["modifyvm", :id, "--vram", "90"]
+
+     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+	 
+  end
+  
+end

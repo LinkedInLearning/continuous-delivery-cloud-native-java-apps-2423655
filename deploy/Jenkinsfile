@@ -42,7 +42,28 @@ pipeline {
 			}		
 		
 		}
+		
+		stage("Deploy to Production"){
 			
+			steps{
+			
+				git url: "${GITHUB_DEPLOY_REPO_URL}", credentialsId: 'github-ssh-key', branch: 'release'
+				
+				sh "git config user.email pipeline@linkedin.com"
+				
+				sh "git config user.name pipeline"
+								
+				sh 'git merge main'
+				
+				sshagent(["github-ssh-key"]){
+				
+					sh "git push origin release"
+				
+				}
+			
+			}		
+		
+		}							
 	}
 
 }

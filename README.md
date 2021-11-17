@@ -38,7 +38,7 @@ Within the lab environment, you will find a copy of the exercise files in their 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
 [lil-course-url]: https://www.linkedin.com/learning/
-[virtualbox-url]: https://www.virtualbox.org/wiki/Download_Old_Builds_6_1
+[vbox-url]: https://www.virtualbox.org/wiki/Download_Old_Builds_6_1
 [vagrant-url]: https://www.vagrantup.com/downloads
 [lil-thumbnail-url]: http://
 

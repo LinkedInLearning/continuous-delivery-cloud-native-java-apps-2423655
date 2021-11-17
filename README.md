@@ -20,15 +20,25 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
+## Lab Environment
+This course is accompanied by a lab environment that includes the required tools and platforms for completing the exercise files in the course.  The lab environment is setup using Vagrant and runs within an Ubuntu virtual machine on your workstation using VirtualBox.  The Vagrantfile is found within the `lab-setup` directory within the exercise files for the course.  At a minimum, the lab envrionment will require 8GB of RAM and 3 CPUs to run the virtual machine.
+
+Within the lab environment, you will find a copy of the exercise files in their initial state located on the desktop.  The exercise files are not managed with Git, so you must copy the files for a particular lesson into the virtual machine from the exercise files stored on your local workstation outside of the virtual machine.  This is necessary because throughout the course you will create Git repositories for the individual microservices found inside the exercise files directory.
+
 ## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
+1. To launch the lab environment, you must have the following installed:
+	- [VirtualBox Version 6.1.26][vbox-url]
+	- [Vagrant Version 2.2.18][vagrant-url]
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+3. Navigate into the `lab-setup` directory within the exercise files via the command line.
+4. Install the VBguest Plugin Version 0.30.0 using the command: `vagrant plugin install vagrant-vbguest`
+5. Launch the lab using the command: `vagrant up`
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
 [lil-course-url]: https://www.linkedin.com/learning/
+[virtualbox-url]: https://www.virtualbox.org/wiki/Download_Old_Builds_6_1
+[vagrant-url]: https://www.vagrantup.com/downloads
 [lil-thumbnail-url]: http://
 

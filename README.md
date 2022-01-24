@@ -1,7 +1,10 @@
 # Continuous Delivery for Cloud Native Java Apps
-This is the repository for the LinkedIn Learning course `Continuous Delivery for Cloud Native Java Apps`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Continuous Delivery for Cloud Native Java Apps. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the readme file in the main branch for updated instructions and information._
+![Continuous Delivery for Cloud Native Java Apps][lil-thumbnail-url] 
+
+Throughout its history, Java has continuously evolved to embrace and adapt to new innovations, from cloud to containers to microservices. This transformation has changed the way teams build and deliver Java applications, and in this course, Kevin Bowersox explains how to establish a continuous delivery pipeline to automate the release process for your applications. Kevin shows how to integrate popular tools like Maven, Jenkins, and Docker to build and package modern Java apps, and explains how tools like Kustomize and Argo CD are used to automate their deployment. If you’re a Java developer looking for a toolset that will accelerate your release cadence without sacrificing your application’s stability, this is the course for you.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -20,6 +23,7 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
+
 ## Lab Environment
 This course is accompanied by a lab environment that includes the required tools and platforms for completing the exercise files in the course.  The lab environment is setup using Vagrant and runs within an Ubuntu virtual machine on your workstation using VirtualBox.  The Vagrantfile is found within the `lab-setup` directory within the exercise files for the course.  At a minimum, the lab envrionment will require 8GB of RAM and 3 CPUs to run the virtual machine.
 
@@ -34,11 +38,23 @@ Within the lab environment, you will find a copy of the exercise files in their 
 4. Install the VBguest Plugin Version 0.30.0 using the command: `vagrant plugin install vagrant-vbguest`
 5. Launch the lab using the command: `vagrant up`
 
+### Instructor
+
+Kevin Bowersox 
+                            
+Web application developer
+
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/kevin-bowersox).
+
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
+
 [vbox-url]: https://www.virtualbox.org/wiki/Download_Old_Builds_6_1
 [vagrant-url]: https://www.vagrantup.com/downloads
-[lil-thumbnail-url]: http://
+[lil-course-url]: https://www.linkedin.com/learning/continuous-delivery-for-cloud-native-java-apps
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2423655/2423655-1642536522193-16x9.jpg
+
 
